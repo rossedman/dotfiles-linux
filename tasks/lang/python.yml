@@ -1,0 +1,32 @@
+---
+- name: install python
+  become: true
+  apt: name=python
+
+- name: install python3 pip
+  become: true
+  apt: name=python3-pip
+
+- name: install pip3 packages
+  become: true
+  pip: name="{{item}}" state=latest executable=/usr/bin/pip3
+  with_items:
+  - boto3
+  - bumpversion
+  - pylint
+  - pytest
+  - pytest-cov
+
+- name: upgrade pip
+  become: true
+  pip: name=pip state=latest
+
+- name: install pip packages
+  become: true
+  pip: name="{{item}}" state=latest
+  with_items:
+  - boto3
+  - bumpversion
+  - pylint
+  - pytest
+  - pytest-cov

@@ -1,0 +1,11 @@
+---
+- name: install basic softwares
+  become: true
+  apt: name="{{item}}"
+  with_items:
+  - curl
+  - git
+  - git-core
+  - unzip
+  - zip
+  - wget

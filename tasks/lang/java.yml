@@ -1,0 +1,28 @@
+---
+- name: install java
+  become: true
+  apt: name="{{ item }}"
+  with_items:
+  - default-jre
+  - default-jdk
+  - maven
+
+- name: download sdkman
+  get_url:
+    url: https://get.sdkman.io
+    dest: /tmp/sdkman.sh
+    mode: 0775
+
+- name: install sdkman
+  command: /tmp/sdkman.sh
+
+- name: install sdkman packages
+  shell: 'source ~/.sdkman/bin/sdkman-init.sh && sdk install {{item}}'
+  with_items:
+  - gradle
+  - groovy
+  - kobalt
+  - scala
+  - springboot
+  args:
+    executable: /bin/bash
