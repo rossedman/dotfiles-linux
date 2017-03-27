@@ -1,0 +1,13 @@
+zsh_theme: robbyrussell
+zsh_plugins:
+  - git
+  - docker
+  - git-extras
+  - github
+  - grunt
+  - mvn
+  - npm
+  - pip
+  - python
+  - ssh-agent
+  - vagrant
