@@ -13,9 +13,11 @@
     dest: /tmp/sdkman.sh
     mode: 0775
 
+# TODO: skip if installed
 - name: install sdkman
   command: /tmp/sdkman.sh
 
+# TODO: skip if installed
 - name: install sdkman packages
   shell: 'source ~/.sdkman/bin/sdkman-init.sh && sdk install {{item}}'
   with_items:

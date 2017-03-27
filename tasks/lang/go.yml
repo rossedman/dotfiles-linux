@@ -1,1 +1,17 @@
 ---
+- name: download golang
+  get_url:
+    url: https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
+    dest: /tmp/go.tar.gz
+    checksum: sha256:53ab94104ee3923e228a2cb2116e5e462ad3ebaeea06ff04463479d7f12d27ca
+
+- name: install golang
+  become: true
+  unarchive:
+    src: /tmp/go.tar.gz
+    dest: /usr/local
+    remote_src: True
+
+# TODO: add PATH vars
+# export GOPATH=$HOME/work
+# export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin

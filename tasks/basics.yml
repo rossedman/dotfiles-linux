@@ -3,9 +3,16 @@
   become: true
   apt: name="{{item}}"
   with_items:
+  - automake
+  - build-essential
   - curl
   - git
   - git-core
+  - python-software-properties
   - unzip
-  - zip
   - wget
+  - zip
+  - zlib1g-dev
+
+# TODO: create ~/Code folder
+# TODO: clone github projects into Code folder

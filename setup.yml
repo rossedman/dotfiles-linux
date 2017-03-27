@@ -4,7 +4,10 @@
   - include: tasks/basics.yml
   #- include: tasks/git.yml
   # languages
+  - include: tasks/lang/go.yml
   - include: tasks/lang/java.yml
+  - include: tasks/lang/javascript.yml
   - include: tasks/lang/python.yml
+  - include: tasks/lang/ruby.yml
   # desktop apps
   - include: tasks/apps/atom.yml
