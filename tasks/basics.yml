@@ -4,11 +4,14 @@
   apt: name="{{item}}"
   with_items:
   - automake
+  - apt-transport-https
   - build-essential
+  - ca-certificates
   - curl
   - git
   - git-core
   - python-software-properties
+  - software-properties-common
   - unzip
   - wget
   - zip
