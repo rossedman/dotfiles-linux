@@ -33,16 +33,6 @@
   become: true
   apt: name="docker-engine"
 
-- name: add docker group
-  become: true
-  group: name=docker
-
-- name: add current user to docker group
-  become: true
-  user:
-    name: "{{ansible_user_id}}"
-    groups: docker
-
 # TODO: make this a handler
 - name: restart docker
   become: true

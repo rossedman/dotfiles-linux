@@ -33,6 +33,18 @@
     ssh_key_bits: 2048
     ssh_key_file: .ssh/id_rsa
 
+- name: add docker group
+  become: true
+  group: name=docker
+
+- name: add user to groups
+  become: true
+  user:
+    name: "{{ansible_user_id}}"
+    groups:
+      - docker
+      - sudoers
+
 - name: create code folder
   file:
     path: "/home/{{ansible_user_id}}/Code"

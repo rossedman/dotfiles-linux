@@ -16,6 +16,7 @@
 
   # tools
   - include: tasks/tools/docker.yml
+  - include: tasks/tools/docker-clean.yml
   - include: tasks/tools/packer.yml
   - include: tasks/tools/terraform.yml
 
