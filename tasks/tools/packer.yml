@@ -1,5 +1,4 @@
 ---
-
 # TODO: create update and sha checks for multiple version
 - name: get terraform
   get_url:

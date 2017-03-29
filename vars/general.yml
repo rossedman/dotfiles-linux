@@ -2,7 +2,6 @@
 git_email: "ross.edman@gmail.com"
 git_name: "Ross Edman"
 
-
 # Basics
 basic_system_packages:
 - automake
@@ -48,6 +47,7 @@ java_sdkman_packages:
 # Python Tools
 pip_packages:
 - awscli
+- aws-shell
 - boto3
 - bumpversion
 - pylint
@@ -67,3 +67,7 @@ packer_checksum: "sha256:d11c7ff78f546abaced4fcc7828f59ba1346e88276326d234b7afed
 # Terraform
 terraform_url: "https://releases.hashicorp.com/terraform/0.9.2/terraform_0.9.2_linux_amd64.zip?_ga=1.241782721.2107522903.1487362906"
 terraform_checksum: "sha256:a916228ea4c19c91c9a5dee2905885f517eb7c31ba4dbf5d79f9f36606973313"
+
+# Google Cloud SDK
+gcloud_url: "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-149.0.0-linux-x86.tar.gz"
+gcloud_checksum: "sha256:3d47a719c0ad9d548219c46b930032ce71d2998b3f1cdccaeb8fc6a4e8fba1b2"

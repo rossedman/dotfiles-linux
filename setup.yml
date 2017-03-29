@@ -16,8 +16,10 @@
    - include: tasks/lang/ruby.yml
 
    # tools
+   - include: tasks/tools/awscli.yml
    - include: tasks/tools/azurecli.yml
    - include: tasks/tools/docker.yml
+   - include: tasks/tools/gcloud.yml
    - include: tasks/tools/packer.yml
    - include: tasks/tools/terraform.yml
 

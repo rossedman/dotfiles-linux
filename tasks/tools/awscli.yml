@@ -1,0 +1,10 @@
+---
+- name: create aws directory
+  file:
+    path: /home/{{ansible_user_id}}/.aws
+    state: directory
+
+- name: install aws config
+  copy:
+    src: aws-config
+    dest: /home/{{ansible_user_id}}/.aws/config

@@ -1,0 +1,12 @@
+---
+- name: get gcloud
+  get_url:
+    url: "{{gcloud_url}}"
+    dest: /tmp/gcloud.zip
+    checksum: "{{gcloud_checksum}}"
+
+- name: unzip gcloud
+  unarchive:
+    src: /tmp/gcloud.zip
+    dest: /tmp
+    creates: /tmp/google-cloud-sdk
