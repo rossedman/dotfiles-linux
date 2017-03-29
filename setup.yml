@@ -3,6 +3,7 @@
   vars_files:
     - vars/general.yml
   tasks:
+   # basics
    - include: tasks/basics.yml
    - include: tasks/zsh.yml
    - include: tasks/git.yml
@@ -15,8 +16,8 @@
    - include: tasks/lang/ruby.yml
 
    # tools
+   - include: tasks/tools/azurecli.yml
    - include: tasks/tools/docker.yml
-   #- include: tasks/tools/docker-clean.yml
    - include: tasks/tools/packer.yml
    - include: tasks/tools/terraform.yml
 

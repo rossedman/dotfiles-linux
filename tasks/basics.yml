@@ -2,27 +2,12 @@
 - name: install basic softwares
   become: true
   apt: name="{{item}}"
-  with_items:
-  - automake
-  - apt-transport-https
-  - build-essential
-  - ca-certificates
-  - curl
-  - git
-  - git-core
-  - python-software-properties
-  - software-properties-common
-  - unzip
-  - wget
-  - zip
-  - zlib1g-dev
+  with_items: "{{basic_system_packages}}"
 
 - name: install shells
   become: true
   apt: name="{{item}}"
-  with_items:
-  - terminator
-  - zsh
+  with_items: "{{shells}}"
 
 - name: setup user
   become: true

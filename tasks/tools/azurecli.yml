@@ -1,0 +1,22 @@
+---
+- name: add azurecli repository
+  become: true
+  apt_repository:
+    repo: "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/azure-cli/ wheezy main"
+    state: present
+
+- name: add azurecli key repo
+  become: true
+  apt_key: keyserver="apt-mo.trafficmanager.net" id=417A0893
+
+- name: install dependencies
+  become: true
+  apt: name=apt-transport-https
+
+- name: apt update cache
+  become: true
+  apt: update_cache=true
+
+- name: install azurecli
+  become: true
+  apt: name=azure-cli

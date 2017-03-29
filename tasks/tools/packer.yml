@@ -3,9 +3,9 @@
 # TODO: create update and sha checks for multiple version
 - name: get terraform
   get_url:
-    url: https://releases.hashicorp.com/packer/0.12.3/packer_0.12.3_linux_amd64.zip?_ga=1.237726208.1243223233.1490149019
+    url: "{{packer_url}}"
     dest: /tmp/packer.zip
-    checksum: sha256:d11c7ff78f546abaced4fcc7828f59ba1346e88276326d234b7afed32c9578fe
+    checksum: "{{packer_checksum}}"
 
 - name: unzip terraform
   become: true

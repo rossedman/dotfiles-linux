@@ -20,11 +20,6 @@
 # TODO: skip if installed
 - name: install sdkman packages
   shell: 'source ~/.sdkman/bin/sdkman-init.sh && sdk install {{item}}'
-  with_items:
-  - gradle
-  - groovy
-  - kobalt
-  - scala
-  - springboot
+  with_items: "{{java_sdkman_packages}}"
   args:
     executable: /bin/bash

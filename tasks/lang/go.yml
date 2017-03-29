@@ -15,3 +15,5 @@
 # TODO: add PATH vars
 # export GOPATH=$HOME/work
 # export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+# TODO: install go libraries 

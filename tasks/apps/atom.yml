@@ -6,3 +6,5 @@
 - name: install atom text editor
   become: true
   apt: name=atom
+
+# TODO: apm packages 

@@ -1,13 +1,69 @@
+# Git Setup
+git_email: "ross.edman@gmail.com"
+git_name: "Ross Edman"
+
+
+# Basics
+basic_system_packages:
+- automake
+- apt-transport-https
+- build-essential
+- ca-certificates
+- curl
+- git
+- git-core
+- python-software-properties
+- software-properties-common
+- unzip
+- wget
+- zip
+- zlib1g-dev
+
+# Shell
+shells:
+- terminator
+- zsh
+
 zsh_theme: robbyrussell
 zsh_plugins:
-  - git
-  - docker
-  - git-extras
-  - github
-  - grunt
-  - mvn
-  - npm
-  - pip
-  - python
-  - ssh-agent
-  - vagrant
+- git
+- docker
+- git-extras
+- github
+- grunt
+- mvn
+- npm
+- pip
+- python
+- ssh-agent
+- vagrant
+
+# Java Tools
+java_sdkman_packages:
+- gradle
+- groovy
+- scala
+- springboot
+
+# Python Tools
+pip_packages:
+- awscli
+- boto3
+- bumpversion
+- pylint
+- pytest
+- pytest-cov
+
+# Javascript Packages
+npm_packages:
+- grunt-cli
+- nodemon
+- serverless
+
+# Packer
+packer_url: "https://releases.hashicorp.com/packer/0.12.3/packer_0.12.3_linux_amd64.zip?_ga=1.237726208.1243223233.1490149019"
+packer_checksum: "sha256:d11c7ff78f546abaced4fcc7828f59ba1346e88276326d234b7afed32c9578fe"
+
+# Terraform
+terraform_url: "https://releases.hashicorp.com/terraform/0.9.2/terraform_0.9.2_linux_amd64.zip?_ga=1.241782721.2107522903.1487362906"
+terraform_checksum: "sha256:a916228ea4c19c91c9a5dee2905885f517eb7c31ba4dbf5d79f9f36606973313"
