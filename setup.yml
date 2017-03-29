@@ -3,22 +3,22 @@
   vars_files:
     - vars/general.yml
   tasks:
-  # - include: tasks/basics.yml
-  # - include: tasks/zsh.yml
-  #- include: tasks/git.yml
+   - include: tasks/basics.yml
+   - include: tasks/zsh.yml
+   - include: tasks/git.yml
 
-  # languages
-  # - include: tasks/lang/go.yml
-  # - include: tasks/lang/java.yml
-  # - include: tasks/lang/javascript.yml
-  # - include: tasks/lang/python.yml
-  # - include: tasks/lang/ruby.yml
+   # languages
+   - include: tasks/lang/go.yml
+   - include: tasks/lang/java.yml
+   - include: tasks/lang/javascript.yml
+   - include: tasks/lang/python.yml
+   - include: tasks/lang/ruby.yml
 
-  # tools
-  - include: tasks/tools/docker.yml
-  - include: tasks/tools/docker-clean.yml
-  - include: tasks/tools/packer.yml
-  - include: tasks/tools/terraform.yml
+   # tools
+   - include: tasks/tools/docker.yml
+   #- include: tasks/tools/docker-clean.yml
+   - include: tasks/tools/packer.yml
+   - include: tasks/tools/terraform.yml
 
-  # desktop apps
-  # - include: tasks/apps/atom.yml
+   # desktop apps
+   - include: tasks/apps/atom.yml
