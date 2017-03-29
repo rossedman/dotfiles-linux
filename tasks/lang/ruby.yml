@@ -2,7 +2,7 @@
 - name: install gemrc
   copy:
     src: .gemrc
-    dest: /home/{{ansible_user_id}}/.gemrc
+    dest: "/home/{{ansible_user_id}}/.gemrc"
 
 # TODO:
 # - rvm setup

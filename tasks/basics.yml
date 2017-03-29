@@ -13,16 +13,27 @@
   - wget
   - zip
   - zlib1g-dev
+
+- name: install shells
+  become: true
+  apt: name="{{item}}"
+  with_items:
+  - terminator
   - zsh
 
 - name: setup user
   become: true
   user:
-    name: rossedman
+    name: "{{ansible_user_id}}"
     shell: /bin/zsh
     generate_ssh_key: yes
     ssh_key_bits: 2048
     ssh_key_file: .ssh/id_rsa
 
-# TODO: create ~/Code folder
+- name: create code folder
+  file:
+    path: "/home/{{ansible_user_id}}/Code"
+    state: directory
+    mode: 0755
+
 # TODO: clone github projects into Code folder
