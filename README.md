@@ -10,6 +10,7 @@ vi /etc/sudoers --> NOPASSWD:ALL
 ## Install
 ```
 ./bootstrap.sh
+ansible-galaxy install -r requirements.yml
 ansible-playbook setup.yml
 cd /tmp && ./google-cloud-sdk/install.sh
 gcloud components install kubectl

@@ -1,5 +1,29 @@
 ---
 - hosts: 127.0.0.1
+  vars:
+    atom_upgrade_all: True
+    atom_packages:
+    - ariake-dark-syntax
+    - atom-material-syntax
+    - atom-material-ui
+    - editorconfig
+    - emmet
+    - file-icons
+    - fonts
+    - git-plus
+    - language-ansible
+    - language-docker
+    - language-groovy
+    - language-powershell
+    - linter
+    - linter-eslint
+    - linter-pylama
+    - nord-atom-syntax
+    - nord-atom-ui
+    - pretty-json
+    - seti-ui
+    - terminal-plus
+    - vim-mode-plus
   vars_files:
     - vars/general.yml
   tasks:
@@ -26,3 +50,6 @@
 
    # desktop apps
    - include: tasks/apps/atom.yml
+
+  roles:
+     - { role: jgkim.atom }

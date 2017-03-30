@@ -8,9 +8,11 @@ basic_system_packages:
 - apt-transport-https
 - build-essential
 - ca-certificates
+- chromium-browser
 - curl
 - git
 - git-core
+- jq
 - python-software-properties
 - software-properties-common
 - unzip
