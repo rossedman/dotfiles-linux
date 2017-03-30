@@ -5,6 +5,8 @@
   shell: 'curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -'
   args:
     executable: /bin/bash
+  notify:
+  - apt cache update
 
 - name: install nodejs
   become: true

@@ -2,9 +2,9 @@
 - name: install atom ppa
   become: true
   apt_repository: repo='ppa:webupd8team/atom'
+  notify:
+  - apt cache update
 
 - name: install atom text editor
   become: true
   apt: name=atom
-
-# TODO: apm packages 

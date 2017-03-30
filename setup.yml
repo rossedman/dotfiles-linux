@@ -6,11 +6,13 @@
     - ariake-dark-syntax
     - atom-material-syntax
     - atom-material-ui
+    - busy-signal
     - editorconfig
     - emmet
     - file-icons
     - fonts
     - git-plus
+    - intentions
     - language-ansible
     - language-docker
     - language-groovy
@@ -26,6 +28,9 @@
     - vim-mode-plus
   vars_files:
     - vars/general.yml
+  handlers:
+  - name: apt cache update
+    apt: update_cache=true
   tasks:
    # basics
    - include: tasks/basics.yml

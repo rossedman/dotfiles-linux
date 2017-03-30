@@ -23,11 +23,8 @@
   apt_repository:
     repo: "deb https://apt.dockerproject.org/repo ubuntu-xenial main"
     state: present
-
-- name: update cache
-  become: true
-  apt:
-    update_cache: true
+  notify:
+  - apt cache update
 
 - name: install docker
   become: true

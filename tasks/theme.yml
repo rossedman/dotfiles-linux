@@ -11,10 +11,8 @@
   - 'ppa:tista/adapta'
   - 'ppa:numix/ppa'
   - 'ppa:snwh/pulp'
-
-- name: update apt cache
-  become: true
-  apt: update_cache=true
+  notify:
+  - apt cache update
 
 - name: install theme
   become: true
