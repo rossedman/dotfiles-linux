@@ -5,6 +5,7 @@
   tasks:
    # basics
    - include: tasks/basics.yml
+   - include: tasks/theme.yml
    - include: tasks/zsh.yml
    - include: tasks/git.yml
 

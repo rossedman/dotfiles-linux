@@ -23,6 +23,10 @@ shells:
 - terminator
 - zsh
 
+# Shell Theme
+# @link: https://github.com/Mayccoll/Gogh/blob/master/content/themes.md
+terminal_gist: "http://git.io/v3DBP"
+
 zsh_theme: robbyrussell
 zsh_plugins:
 - git

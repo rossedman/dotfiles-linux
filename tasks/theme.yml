@@ -1,0 +1,35 @@
+---
+
+- name: install unity tweak tool
+  become: true
+  apt: name=unity-tweak-tool
+
+- name: install theme repository
+  become: true
+  apt_repository: repo="{{item}}"
+  with_items:
+  - 'ppa:tista/adapta'
+  - 'ppa:numix/ppa'
+  - 'ppa:snwh/pulp'
+
+- name: update apt cache
+  become: true
+  apt: update_cache=true
+
+- name: install theme
+  become: true
+  apt: name="{{item}}"
+  with_items:
+  - adapta-gtk-theme
+  - numix-gtk-theme
+  - numix-icon-theme-circle
+  - paper-icon-theme
+  - paper-gtk-theme
+  - paper-cursor-theme
+
+- name: install dconf-cli for terminal themes
+  become: true
+  apt: name=dconf-cli
+
+- name: set terminal theme
+  shell: "wget -O xt {{terminal_gist}} && chmod +x xt && ./xt && rm xt"
