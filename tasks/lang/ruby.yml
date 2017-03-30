@@ -3,6 +3,7 @@
   copy:
     src: .gemrc
     dest: "/home/{{ansible_user_id}}/.gemrc"
+  become_user: "{{ansible_user_id}}"
 
 # TODO:
 # - rvm setup

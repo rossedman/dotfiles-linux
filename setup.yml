@@ -1,5 +1,6 @@
 ---
 - hosts: 127.0.0.1
+  become: true
   vars:
     atom_upgrade_all: True
     atom_packages:
@@ -27,34 +28,39 @@
     - terminal-plus
     - vim-mode-plus
   vars_files:
-    - vars/general.yml
+  - vars/general.yml
   handlers:
   - name: apt cache update
     apt: update_cache=true
   tasks:
-   # basics
-   - include: tasks/basics.yml
-   - include: tasks/theme.yml
-   - include: tasks/zsh.yml
-   - include: tasks/git.yml
+  # basics
+  # - include: tasks/basics.yml
+  # - include: tasks/theme.yml
+  # - include: tasks/zsh.yml
+  # - include: tasks/git.yml
 
-   # languages
-   - include: tasks/lang/go.yml
-   - include: tasks/lang/java.yml
-   - include: tasks/lang/javascript.yml
-   - include: tasks/lang/python.yml
-   - include: tasks/lang/ruby.yml
+  # languages
+  # - include: tasks/lang/go.yml
+  # - include: tasks/lang/java.yml
+  # - include: tasks/lang/javascript.yml
+  # - include: tasks/lang/python.yml
+  # - include: tasks/lang/ruby.yml
 
-   # tools
-   - include: tasks/tools/awscli.yml
-   - include: tasks/tools/azurecli.yml
-   - include: tasks/tools/docker.yml
-   - include: tasks/tools/gcloud.yml
-   - include: tasks/tools/packer.yml
-   - include: tasks/tools/terraform.yml
+  # tools
+  # - include: tasks/tools/awscli.yml
+  # - include: tasks/tools/azurecli.yml
+  #- include: tasks/tools/docker.yml
+  # - include: tasks/tools/gcloud.yml
+  # - include: tasks/tools/packer.yml
+  # - include: tasks/tools/terraform.yml
 
-   # desktop apps
-   - include: tasks/apps/atom.yml
+  # docker
+  - include: tasks/tools/docker-clean.yml
+  - include: tasks/tools/whalebrew.yml
+
+  # desktop apps
+  #- include: tasks/apps/atom.yml
 
   roles:
-     - { role: jgkim.atom }
+  - { role: angstwad.docker_ubuntu }
+  - { role: jgkim.atom, become_user: "{{ansible_user_id}}" }

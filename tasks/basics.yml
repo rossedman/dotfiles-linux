@@ -1,20 +1,16 @@
 ---
 - name: install basic softwares
-  become: true
   apt: name="{{item}}"
   with_items: "{{basic_system_packages}}"
 
 - name: install shells
-  become: true
   apt: name="{{item}}"
   with_items: "{{shells}}"
 
 - name: add docker group
-  become: true
   group: name=docker
 
 - name: setup user
-  become: true
   user:
     name: "{{ansible_user_id}}"
     shell: /bin/zsh
@@ -27,5 +23,4 @@
     path: "/home/{{ansible_user_id}}/Code"
     state: directory
     mode: 0755
-
-# TODO: clone github projects into Code folder
+  become_user: "{{ansible_user_id}}"

@@ -1,5 +1,3 @@
 ---
-# - src: angstwad.docker_ubuntu
-# - src: geerlingguy.java
+- src: angstwad.docker_ubuntu
 - src: jgkim.atom
-# - src: nickhammond.logrotate

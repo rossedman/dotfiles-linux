@@ -1,7 +1,6 @@
 ---
 # TODO: dont run if already installed
 - name: install node ppa
-  become: true
   shell: 'curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -'
   args:
     executable: /bin/bash
@@ -9,10 +8,8 @@
   - apt cache update
 
 - name: install nodejs
-  become: true
   apt: name=nodejs
 
 - name: install global npm packages
-  become: true
   npm: name="{{item}}" global=yes
   with_items: "{{npm_packages}}"

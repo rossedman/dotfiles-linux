@@ -1,6 +1,4 @@
 ---
-
-# TODO: create update and sha checks for multiple version
 - name: get terraform
   get_url:
     url: "{{terraform_url}}"
@@ -8,7 +6,6 @@
     checksum: "{{terraform_checksum}}"
 
 - name: unzip terraform
-  become: true
   unarchive:
     src: /tmp/terraform.zip
     dest: /usr/local/bin/

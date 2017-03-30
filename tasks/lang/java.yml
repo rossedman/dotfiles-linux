@@ -1,6 +1,5 @@
 ---
 - name: install java
-  become: true
   apt: name="{{ item }}"
   with_items:
   - default-jre
@@ -13,13 +12,13 @@
     dest: /tmp/sdkman.sh
     mode: 0775
 
-# TODO: skip if installed
-- name: install sdkman
-  command: /tmp/sdkman.sh
+- block:
+  - name: install sdkman
+    command: /tmp/sdkman.sh
 
-# TODO: skip if installed
-- name: install sdkman packages
-  shell: 'source ~/.sdkman/bin/sdkman-init.sh && sdk install {{item}}'
-  with_items: "{{java_sdkman_packages}}"
-  args:
-    executable: /bin/bash
+  - name: install sdkman packages
+    shell: 'source ~/.sdkman/bin/sdkman-init.sh && sdk install {{item}}'
+    with_items: "{{java_sdkman_packages}}"
+    args:
+      executable: /bin/bash
+  become_user: "{{ansible_user_id}}"

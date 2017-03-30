@@ -1,0 +1,14 @@
+---
+- shell: uname -s
+  ignore_errors: yes
+  register: uname_s_result
+
+- shell: uname -m
+  ignore_errors: yes
+  register: uname_m_result
+
+- name: install whalebrew  
+  get_url:
+    url: "https://github.com/bfirsh/whalebrwe/releases/download/0.1.0/whalebrew-{{uname_s_result.stdout}}-{{uname_m_result.stdout}}"
+    dest: /usr/local/bin/whalebrew
+    mode: 0775

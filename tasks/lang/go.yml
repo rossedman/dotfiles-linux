@@ -6,7 +6,6 @@
     checksum: sha256:53ab94104ee3923e228a2cb2116e5e462ad3ebaeea06ff04463479d7f12d27ca
 
 - name: install golang
-  become: true
   unarchive:
     src: /tmp/go.tar.gz
     dest: /usr/local
@@ -16,4 +15,4 @@
 # export GOPATH=$HOME/work
 # export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
-# TODO: install go libraries 
+# TODO: install go libraries

@@ -7,7 +7,6 @@
     checksum: "{{packer_checksum}}"
 
 - name: unzip terraform
-  become: true
   unarchive:
     src: /tmp/packer.zip
     dest: /usr/local/bin/
